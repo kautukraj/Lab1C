@@ -26,7 +26,10 @@ else if ((b*b - 4*a*c) == 0 )
 else
 {
 
-real = -b / 2*a;
+if (b==0)
+ real = 0;
+ else
+  real = -b / 2*a;
 i = sqrt(4*a*c - b*b) / 2*a;
 printf( "%.2lf +  i %.2lf %.2lf -  i %.2lf\n", real, i, real, i); 
 
