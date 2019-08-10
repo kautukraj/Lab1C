@@ -3,41 +3,28 @@
 
 int main ()
 {
-double a,b,c;
+double a,b,c,D;
 scanf ("%lf %lf %lf", &a, &b, &c);
-double r,r1,r2,real,i;
+D = (b*b) - (4*a*c);
  
  if (a!=0)
  {
-if ((b*b - 4*a*c)  > 0 )
+
+if (D<0)
 {
- r1 = (-b + sqrt (b*b-4*a*c)) / 2*a ;
- r2 = (-b - sqrt (b*b-4*a*c)) / 2*a ;
- 
- printf("%.2lf %.2lf\n", r1,r2);
 
-
-}
-
-else if ((b*b - 4*a*c) == 0 )
-{
-    r = (-b + sqrt (b*b-4*a*c)) / 2*a ;
-    printf("%.2lf %.2lf\n", r,r);
-    
+printf ("%.2lf+i%.2lf ", -b/(2*a), sqrt(-D) / (2*a));
+printf ("%.2lf-i%.2lf", -b/(2*a), sqrt(-D) / (2*a));
 }
 
 else
+
 {
 
-if (b==0)
- real = 0;
- else
-  real = -b / 2*a;
-i = sqrt(4*a*c - b*b) / 2*a;
-printf( "%.2lf +  i %.2lf %.2lf -  i %.2lf\n", real, i, real, i); 
-
+printf ("%.2lf %.2lf", (-b + sqrt(D)) / (2*a), (-b - sqrt(D)) / (2*a));
 }
- }
+}
+
 return 0;
 
-}
+} 
